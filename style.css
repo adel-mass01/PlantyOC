@@ -8,6 +8,384 @@ Description: The Astra WordPress theme is lightning-fast and highly customizable
 Tags: custom-menu,custom-logo,entertainment,one-column,two-columns,left-sidebar,e-commerce,right-sidebar,custom-colors,editor-style,featured-images,full-width-template,microformats,post-formats,rtl-language-support,theme-options,threaded-comments,translation-ready,blog
 Version: 4.8.13.1740580210
 Updated: 2025-02-26 14:30:10
-
 */
 
+
+/* general */
+
+
+  
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Barre de menu principal */
+
+.container-header {
+    display: flex;
+    background-color: white;
+    align-items: center; 
+    justify-content: space-between; 
+    height: 70px; 
+    padding: 0;
+    
+    max-width: 100%;
+}
+
+nav {
+    height: 100%; 
+    margin-left: auto; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: stretch; 
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+}
+
+nav li {
+    display: flex; 
+    align-items: center;
+    height: 100%; 
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 0 20px;
+    height: 100%; 
+    display: flex;
+    align-items: center;
+}
+
+nav a:hover{
+    color: black;
+    font-weight: bold;
+}
+
+/* lien commander dans le menu */
+
+.commander-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #DC9F96;
+    color: white;
+    height: 100%; 
+    padding: 0 20px; 
+    font-weight: bold;
+    width: 200px;
+    font-size: 15px;
+}
+
+.commander-link:hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#C02E44;
+    color: white;
+    height: 100%; 
+    padding: 0 20px; 
+    font-weight: bold;
+    width: 200px;
+    font-size: 15px;
+}
+
+/* Footer */
+
+footer{
+    background-color: white;
+    height: 60px;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+}
+
+/* images des fruits en page d'accueil */
+
+.quattreimages{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* menu responsive */
+
+.menu-menu-perso-container{
+    display: block;
+}
+
+.menu-menu-petit-ecran-container{
+    display: none;
+}
+
+@media (max-width :601px) {
+
+.menu-menu-perso-container{
+    display: none;
+}
+
+.menu-menu-petit-ecran-container{
+    display: block;
+    margin-right: auto;
+}
+
+.menu-menu-petit-ecran-container ul{
+    font-size: 15px;
+    gap: 0;  
+}
+
+nav a {
+    padding:5px;
+}
+
+.commander-link {
+    width: 110px;
+    font-size: 15px;
+    height: 20px;
+}}
+
+@media (max-width :473px) {
+.menu-menu-perso-container{
+    display: none;
+}
+    
+.menu-menu-petit-ecran-container{
+    display: block;
+    margin-right: auto;
+}
+    
+.menu-menu-petit-ecran-container ul{
+    font-size: 10px;
+    gap: 0;  
+}
+    
+nav a{
+    padding:5px;
+}
+    
+.commander-link{
+    width: 75px;
+    font-size: 10px;
+    height: 20px;
+}}
+
+
+@media (max-width :388px) {
+
+
+    .titre-nousrencontrer{
+        font-size: 15px !important;
+    }
+
+   
+.menu-menu-perso-container {
+    display: none;
+}
+        
+.menu-menu-petit-ecran-container {
+    display: block;
+    margin-right: auto;
+    
+}
+        
+.menu-menu-petit-ecran-container ul {
+    flex-direction: column;
+    font-size: 10px;
+    gap: 0;  
+}
+        
+nav a{
+    padding:5px;
+}
+        
+.commander-link {
+    width: 75px;
+    font-size: 10px;
+    
+}}
+
+@media (max-width :272px){
+    .container-logo img{
+        width: 20px;
+    }
+
+    .menu-menu-petit-ecran-container{
+        max-width: 100%;
+    }
+}
+/* fleur de la page nous rencontrer */
+
+
+
+.fleur{
+   
+        position: relative;
+        transform: translate(70px, -140px); /* déplace sans casser le flux */
+       
+      }
+      
+  
+    
+
+
+/* formualaire de contact */
+
+#post-13 > div > div.wp-block-uagb-container.uagb-block-adce50fd.alignfull.uagb-is-root-container > div.fluentform.ff-default.fluentform_wrapper_3.formulaire-un.ff_guten_block.ffs_default_wrap {
+    max-width: 100%;
+}
+.formulaire-un{
+    width:400px !important ;
+}
+
+.formulaire-un label{
+     font-size: 20px;
+}
+
+.formulaire-un input{
+    height: 70px;
+}
+
+.cont-message-form{
+    height: 250px;
+}
+
+.bouton-form{
+    width: 150px;
+}
+
+/* image de la canette page d'acueil */
+
+.canette {
+    position: relative;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30vw;    
+}
+
+.branche-gauche, .branche-droite {
+    position: absolute;
+    z-index: 1;
+    width: 30vw;      
+}
+
+.branche-gauche {
+    left: calc(62% - 10vw); 
+    top: 50%;
+    transform: translate(-100%, -50%);
+}
+
+.branche-droite {
+    right: calc(62% - 10vw);
+    top: 50%;
+    transform: translate(100%, -50%);
+}
+
+
+@media (max-width:743px) {
+        .oubliepas {
+            width: 10px;
+        }}
+            
+
+
+/* courbure sous les bloc */
+
+.vague-accueil {
+    
+   
+    border-bottom-left-radius: 50% 60px;
+    border-bottom-right-radius: 50% 60px;
+}
+
+.vague2-accueil {
+    
+   
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+}
+
+.vague-nousrencontrer {
+    
+   
+    border-bottom-left-radius: 50% 90px;
+    border-bottom-right-radius: 50% 90px;
+}
+
+
+ /* page commander */ 
+
+ /* text dans l'image */ 
+
+ .image-commander {
+    display: flex;
+    justify-content: center;  /* Centre horizontalement */
+    align-items: center;      /* Centre verticalement */
+    position: relative;  
+    width: 200px;
+    
+        /* Permet de positionner les éléments enfants relativement */
+  }
+  
+  .image-commander img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .text-centrer {
+    position: absolute; 
+    color: white;  
+    font-size: 25px;  
+   max-width: 100%;
+   text-align: center;
+    font-weight: 800;
+    padding: 25px;
+    
+   
+  }
+  
+  .ff-el-input--label, .asterisk-right {
+    display: none !important;
+  }
+
+/* test blocage */
+
+@media (max-width: 767px){
+
+
+
+  .fleur{
+   width: 100px;
+    position: relative;
+    transform: translate(20px, -40px); 
+   
+  }
+}
+
+
+@media (max-width: 930px) {
+    .lequipe-mobile{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 510px) {
+    .lequipe-mobile{
+       background-color: white;
+    }
+}
