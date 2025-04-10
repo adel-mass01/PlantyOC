@@ -11,60 +11,85 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+    exit; // Exit if accessed directly.
 }
 
 ?><!DOCTYPE html>
 <?php astra_html_before(); ?>
 <html <?php language_attributes(); ?>>
 <head>
-<?php astra_head_top(); ?>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<?php
-if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
-	?>
-	<link rel="profile" href="https://gmpg.org/xfn/11"> 
-	<?php
-}
-?>
-<?php wp_head(); ?>
-<?php astra_head_bottom(); ?>
+    <?php astra_head_top(); ?>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+
+
+
+    <?php wp_head(); ?>
+    <?php astra_head_bottom(); ?>
 </head>
 
 <body <?php astra_schema_body(); ?> <?php body_class(); ?>>
 <?php astra_body_top(); ?>
 <?php wp_body_open(); ?>
 
-<a
-	class="skip-link screen-reader-text"
-	href="#content"
-	title="<?php echo esc_attr( astra_default_strings( 'string-header-skip-link', false ) ); ?>">
-		<?php echo esc_html( astra_default_strings( 'string-header-skip-link', false ) ); ?>
-</a>
+<header>
+    <div class="container-header">
+        <!-- Logo -->
+        <div class="container-logo">
+            <?php the_custom_logo(); ?>
+        </div>
 
-<div
-<?php
-	echo wp_kses_post(
-		astra_attr(
-			'site',
-			array(
-				'id'    => 'page',
-				'class' => 'hfeed site',
-			)
-		)
-	);
-	?>
->
-	<?php
-	astra_header_before();
+        <!-- Menu Principal -->
+        <?php 
+        // Ajouter un lien "Admin" au menu principal si l'utilisateur est connecté
+        function ajouter_lien_admin($items, $args) {
+            if (is_user_logged_in() && in_array($args->theme_location, ['menu-perso', 'menu-mobile'])) {
+                $admin_lien = '<li><a class="admin-link" href="' . admin_url() . '">Admin</a></li>';
+        
+                // Ajouter le lien Admin après le premier élément du menu
+                $items_tableau = explode('</li>', $items);
+                $items_tableau = array_filter($items_tableau);
+                array_splice($items_tableau, 1, 0, $admin_lien);
+                $items = implode('</li>', $items_tableau) . '</li>';
+            }
+            return $items;
+        }
+        
+        add_filter('wp_nav_menu_items', 'ajouter_lien_admin', 10, 2);
 
-	astra_header();
+        // Affichage du menu personnalisé
+        ?>
 
-	astra_header_after();
+        
+        
+            <?php
+        wp_nav_menu(array(
+            'theme_location' => 'menu-perso',
+            'container' => 'nav',
+            
+            'fallback_cb' => false,
 
-	astra_content_before();
-	?>
-	<div id="content" class="site-content">
-		<div class="ast-container">
-		<?php astra_content_top(); ?>
+        ));
+        
+        ?>
+        
+
+        <!-- Menu mobile -->
+        
+           
+
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'menu-mobile',
+                'container' => 'nav',
+                'fallback_cb' => false,
+                
+            ));
+            ?>
+        
+    </div>
+</header>
+
+
+
