@@ -244,12 +244,39 @@ nav a{
 
 /* formualaire de contact */
 
+.cont-message-form{
+    height: 250px;
+    position: relative;
+    z-index: 3;
+}
+
+.fleur-message {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .fleur-message::before {
+    content: "";
+    background-image: url('http://localhost:10010/wp-content/uploads/2025/04/Group-16.svg'); /* Ton URL de l'image */
+    background-size: contain;  /* Redimensionne l'image pour qu'elle tienne dans la zone sans déformation */
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 160px;
+    left: -70px;    /* Décale l'image vers la gauche */
+    width: 150px;   /* Ajuste la taille de l'image selon tes besoins */
+    height: 150px;  /* Ajuste la hauteur de l'image */
+    z-index: 1;     /* Permet de superposer l'image correctement par-dessus le contenu */
+  }
+  
+
 #post-13 > div > div.wp-block-uagb-container.uagb-block-adce50fd.alignfull.uagb-is-root-container > div.fluentform.ff-default.fluentform_wrapper_3.formulaire-un.ff_guten_block.ffs_default_wrap {
-    max-width: 100%;
+    max-width: 90%;
 }
 .formulaire-un{
     width:400px !important ;
+
 }
+
 
 .formulaire-un label{
      font-size: 20px;
@@ -259,15 +286,15 @@ nav a{
     height: 70px;
 }
 
-.cont-message-form{
-    height: 250px;
-}
 
 .bouton-form{
     width: 150px;
 }
 
-/* image de la canette page d'acueil */
+
+  
+  
+  /* image de la canette page d'acueil */
 
 .canette {
     position: relative;
@@ -389,3 +416,5 @@ nav a{
        background-color: white;
     }
 }
+
+
