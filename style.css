@@ -122,125 +122,6 @@ footer ul {
 }
 
 
-/* menu responsive */
-
-.menu-menu-perso-container{
-    display: block;
-}
-
-.menu-menu-petit-ecran-container{
-    display: none;
-}
-
-@media (max-width :601px) {
-
-.menu-menu-perso-container{
-    display: none;
-}
-
-.menu-menu-petit-ecran-container{
-    display: block;
-    margin-right: auto;
-}
-
-.menu-menu-petit-ecran-container ul{
-    font-size: 15px;
-    gap: 0;  
-}
-
-nav a {
-    padding:5px;
-}
-
-.commander-link {
-    width: 110px;
-    font-size: 15px;
-    height: 20px;
-}}
-
-@media (max-width :473px) {
-.menu-menu-perso-container{
-    display: none;
-}
-    
-.menu-menu-petit-ecran-container{
-    display: block;
-    margin-right: auto;
-}
-    
-.menu-menu-petit-ecran-container ul{
-    font-size: 10px;
-    gap: 0;  
-}
-    
-nav a{
-    padding:5px;
-}
-    
-.commander-link{
-    width: 75px;
-    font-size: 10px;
-    height: 20px;
-}}
-
-
-@media (max-width :388px) {
-
-
-    .titre-nousrencontrer{
-        font-size: 15px !important;
-    }
-
-   
-.menu-menu-perso-container {
-    display: none;
-}
-        
-.menu-menu-petit-ecran-container {
-    display: block;
-    margin-right: auto;
-    
-}
-        
-.menu-menu-petit-ecran-container ul {
-    flex-direction: column;
-    font-size: 10px;
-    gap: 0;  
-}
-        
-nav a{
-    padding:5px;
-}
-        
-.commander-link {
-    width: 75px;
-    font-size: 10px;
-    
-}}
-
-@media (max-width :272px){
-    .container-logo img{
-        width: 20px;
-    }
-
-    .menu-menu-petit-ecran-container{
-        max-width: 100%;
-    }
-}
-/* fleur de la page nous rencontrer */
-
-
-
-.fleur{
-   
-        position: relative;
-        transform: translate(70px, -140px); /* déplace sans casser le flux */
-       
-      }
-      
-  
-    
-
 
 /* formualaire de contact */
 
@@ -257,15 +138,15 @@ nav a{
   
   .fleur-message::before {
     content: "";
-    background-image: url('http://localhost:10010/wp-content/uploads/2025/04/Group-16.svg'); /* Ton URL de l'image */
-    background-size: contain;  /* Redimensionne l'image pour qu'elle tienne dans la zone sans déformation */
+    background-image: url('http://localhost:10010/wp-content/uploads/2025/04/Group-16.svg'); 
+    background-size: contain;  
     background-repeat: no-repeat;
     position: absolute;
-    top: 160px;
-    left: -70px;    /* Décale l'image vers la gauche */
-    width: 150px;   /* Ajuste la taille de l'image selon tes besoins */
-    height: 150px;  /* Ajuste la hauteur de l'image */
-    z-index: 1;     /* Permet de superposer l'image correctement par-dessus le contenu */
+    top: 190px;
+    left: -70px;   
+    width: 150px;   
+    height: 150px;  
+    z-index: 1;    
   }
   
 
@@ -323,11 +204,7 @@ nav a{
 }
 
 
-@media (max-width:743px) {
-        .oubliepas {
-            width: 10px;
-        }}
-            
+
 
 
 /* courbure sous les bloc */
@@ -354,42 +231,165 @@ nav a{
 }
 
 
- /* page commander */ 
-
- /* text dans l'image */ 
-
- .image-commander {
+ /* page commander */
+ 
+ .containeur-du-text-et-fond {
+    height: 130px;
     display: flex;
-    justify-content: center;  /* Centre horizontalement */
-    align-items: center;      /* Centre verticalement */
-    position: relative;  
-    width: 200px;
-    
-        /* Permet de positionner les éléments enfants relativement */
-  }
-  
-  .image-commander img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .text-centrer {
-    position: absolute; 
-    color: white;  
-    font-size: 25px;  
-   max-width: 100%;
-   text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;       
+    background-position: center;  
+    width: 190px; 
+                    
+}
+
+.bg-fraise {
+    background-image: url('http://localhost:10010/wp-content/uploads/2025/03/jeremy-bezanger-0QgbyZdhX7k-unsplash-1.jpg');
+}
+
+.bg-pamplemousse {
+    background-image: url('http://localhost:10010/wp-content/uploads/2025/03/estudio-bloom-tOitjphtIXU-unsplash-1.jpg');
+}
+
+.bg-framboise {
+    background-image: url('http://localhost:10010/wp-content/uploads/2025/03/rodion-kutsaev-4k8xEFW4_3Q-unsplash-1.jpg');
+}
+
+.bg-citron {
+    background-image: url('http://localhost:10010/wp-content/uploads/2025/03/estudio-bloom-ezqnxsqUZ80-unsplash-1.jpg');
+}
+
+.mise-en-forme-text {
+    font-size: 20px;
+    color: white;
     font-weight: 800;
-    padding: 25px;
+     max-width: 90%;
+       
+}
+
+
+
+ /* Taille ds input pour choisir la valeur de commande */
+
+ #ff_4_numeric_field, #ff_4_numeric_field_1, #ff_4_numeric_field_2, #ff_4_numeric_field_3 {
+    width: 40px;
+    border-radius: 0 ;
+    padding-right: 0;
+    padding-left: 8px;
+    height: 55px  ;
+    text-align: center;
+    font-weight: 500;
+ }
+
+ /* containeur des 4 images plus input */
+
+ #fluentform_4 > fieldset > div.ff-t-container.ff-column-container.ff_columns_total_4.colonne-commander-fruit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 30px !important;
+ }
+
+/* containeur de chaque colonne image + input  */
+
+ #fluentform_4 > fieldset > div.ff-t-container.ff-column-container.ff_columns_total_4.colonne-commander-fruit > div.ff-t-cell.ff-t-column-1,
+ #fluentform_4 > fieldset > div.ff-t-container.ff-column-container.ff_columns_total_4.colonne-commander-fruit > div.ff-t-cell.ff-t-column-2,
+ #fluentform_4 > fieldset > div.ff-t-container.ff-column-container.ff_columns_total_4.colonne-commander-fruit > div.ff-t-cell.ff-t-column-3,
+ #fluentform_4 > fieldset > div.ff-t-container.ff-column-container.ff_columns_total_4.colonne-commander-fruit > div.ff-t-cell.ff-t-column-4{
+    flex-basis: 0% !important;
+    width: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
+    flex-wrap: wrap;
     
+ }
+/*
+/* cible les input du formulaire de commande */
+
+ #fluentform_4 > fieldset > div.contain-info-commande input {
+    width: 380px;
+    height: 70px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+
+/* cible le label du formulaire de contact */
+
+  #fluentform_4 > fieldset > div.ff-t-container.ff-column-container.ff_columns_total_2.contain-info-commande label{
+    color: white;
+    font-size: 20px;
+
+  }
+ 
+
+ .contain-info-commande div.ff-t-cell.ff-t-column-1{
+    border-right: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
+    flex-direction: column;
+  
+    
+    
+  
+ }
+
+ .contain-info-commande div.ff-t-cell.ff-t-column-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    flex-direction: column;
+    
+
+ }
+
+ .contain-info-commande[data-name="ff_cn_id_2"]{
+    border-top: 1px solid white;
+    
+    padding-top:50px ;
+    
+ }
+
+ .bouton-commander{
+    margin-top: 50px;
+ }
+ 
+ .frm-fluent-form .ff-t-container{
+    gap: 0 !important;
+ }
+
+
+ .information-livraison {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px;
+    color:white;
+    font-weight: 600;
+    text-align: left !important;
    
   }
-  
-  .ff-el-input--label, .asterisk-right {
-    display: none !important;
+
+  .container-span-info{
+    margin-right:90px;
   }
 
-/* test blocage */
+  .container-span-livraison{
+    margin-right: 220px;
+  }
+
+
+
+
+
+
+/* MEDIA QUERIE */
 
 @media (max-width: 767px){
 
@@ -418,3 +418,154 @@ nav a{
 }
 
 
+@media (max-width:767px){
+    .avis-client{
+        
+    }
+}
+
+ /* page commande input de commande */
+
+ @media (max-width: 828px) {
+
+ 
+    #fluentform_4 > fieldset > div.ff-t-container.ff-column-container.ff_columns_total_2.contain-info-commande{
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    }
+   
+    #fluentform_4 > fieldset > div.ff-t-container.ff-column-container.ff_columns_total_2.contain-info-commande > div.ff-t-cell.ff-t-column-1{
+       padding-right: 0;
+       border-right: none;
+    }
+   
+    #fluentform_4 > fieldset > div.ff-t-container.ff-column-container.ff_columns_total_2.contain-info-commande > div.ff-t-cell.ff-t-column-2{
+       padding-left: 0;
+    }
+    }
+
+
+/* menu responsive */
+
+.menu-menu-perso-container{
+    display: block;
+}
+
+.menu-menu-petit-ecran-container{
+    display: none;
+}
+
+@media (max-width :601px) {
+
+.menu-menu-perso-container{
+    display: none;
+}
+
+.menu-menu-petit-ecran-container{
+    display: block;
+    margin-right: auto;
+    margin-bottom: 12px;
+}
+
+.menu-menu-petit-ecran-container ul{
+    font-size: 15px;
+    gap: 0;  
+}
+
+nav a {
+    padding:5px;
+}
+
+.commander-link {
+    width: 110px;
+    font-size: 15px;
+    height: 20px;
+    
+}}
+
+@media (max-width :473px) {
+.menu-menu-perso-container{
+    display: none;
+}
+    
+.menu-menu-petit-ecran-container{
+    display: block;
+    margin-right: auto;
+    margin-bottom: 12px;
+}
+    
+.menu-menu-petit-ecran-container ul{
+    font-size: 10px;
+    gap: 0;  
+}
+    
+nav a{
+    padding:5px;
+}
+    
+.commander-link{
+    width: 75px;
+    font-size: 10px;
+    height: 20px;
+    
+}}
+
+
+@media (max-width :388px) {
+
+
+    .titre-nousrencontrer{
+        font-size: 15px !important;
+    }
+
+   
+.menu-menu-perso-container {
+    display: none;
+}
+        
+.menu-menu-petit-ecran-container {
+    display: block;
+    margin-right: auto;
+    margin-bottom: 12px;
+    
+}
+        
+.menu-menu-petit-ecran-container ul {
+    flex-direction: column;
+    font-size: 10px;
+    gap: 0;  
+}
+        
+nav a{
+    padding:5px;
+}
+        
+.commander-link {
+    width: 75px;
+    font-size: 10px;
+    
+    
+}}
+
+@media (max-width :272px){
+    .container-logo img{
+        width: 20px;
+    }
+
+    .menu-menu-petit-ecran-container{
+        max-width: 100%;
+    }
+}
+
+
+/* fleur de la page nous rencontrer */
+
+
+
+.fleur{
+   
+        position: relative;
+        transform: translate(70px, -140px); 
+       
+      }

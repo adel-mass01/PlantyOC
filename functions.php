@@ -50,5 +50,3 @@ function ajouter_classe_commander_a($atts, $menu_item, $args) {
 add_filter('nav_menu_link_attributes', 'ajouter_classe_commander_a', 10, 3);
 
 
-
-
